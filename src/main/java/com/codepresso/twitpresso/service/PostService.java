@@ -9,18 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.myapp.domain.FeedVo;
-import com.mycompany.myapp.domain.FollowVo;
-import com.mycompany.myapp.domain.PostVo;
-import com.mycompany.myapp.domain.PostVoWithUser;
-import com.mycompany.myapp.domain.ResponseVo;
-import com.mycompany.myapp.domain.TokenVo;
-import com.mycompany.myapp.domain.UserVo;
-import com.mycompany.myapp.repository.FeedDao;
-import com.mycompany.myapp.repository.FollowDao;
-import com.mycompany.myapp.repository.PostDao;
-import com.mycompany.myapp.repository.TokenDao;
-import com.mycompany.myapp.repository.UserDao;
+import com.codepresso.twitpresso.domain.FeedVo;
+import com.codepresso.twitpresso.domain.FollowVo;
+import com.codepresso.twitpresso.domain.PostVo;
+import com.codepresso.twitpresso.domain.PostVoWithUser;
+import com.codepresso.twitpresso.domain.ResponseVo;
+import com.codepresso.twitpresso.domain.TokenVo;
+import com.codepresso.twitpresso.domain.UserVo;
+import com.codepresso.twitpresso.repository.FeedDao;
+import com.codepresso.twitpresso.repository.FollowDao;
+import com.codepresso.twitpresso.repository.PostDao;
+import com.codepresso.twitpresso.repository.TokenDao;
+import com.codepresso.twitpresso.repository.UserDao;
 
 @Service
 public class PostService {
@@ -82,7 +82,7 @@ public class PostService {
 			feedVo.setUserId(followerId);
 			postDao.insertOneFeed(feedVo);
 		}
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(postVo);
 		return responseVo;
@@ -110,7 +110,7 @@ public class PostService {
 				postVoWithUser.setCreatedAt(createdAt);
 				allPostsListWithUsers[i] = postVoWithUser;
 			}
-			responseVo.setCode(HttpStatus.OK);
+			responseVo.setCode(HttpStatus.OK.value());
 			responseVo.setMessage("Success");
 			responseVo.setData(allPostsListWithUsers);
 			return responseVo;
@@ -153,13 +153,12 @@ public class PostService {
 					logger.info("Error: deleted post returned null");
 				}
 			}
-			responseVo.setCode(HttpStatus.OK);
+			responseVo.setCode(HttpStatus.OK.value());
 			responseVo.setMessage("Success");
 			responseVo.setData(allPostsListWithUser);
 		}
 		return responseVo;
 	}
-
 
 	// 내 글 조회
 	public ResponseVo selectMyPosts(String token) {
@@ -182,11 +181,9 @@ public class PostService {
 			String createdAt = myPostsList.get(i).getCreatedAt();
 			postVoWithUser.setCreatedAt(createdAt);
 			myPostsListWithUser[i] = postVoWithUser;
-			
-			
-			
+
 		}
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(myPostsListWithUser);
 		return responseVo;
@@ -207,7 +204,7 @@ public class PostService {
 		postVoWithUser.setCreatedAt(createdAt);
 		userVo = userDao.selectOneUserById(userId);
 		postVoWithUser.setUser(userVo);
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(postVoWithUser);
 		return responseVo;
@@ -218,11 +215,11 @@ public class PostService {
 		int integerOneIfDeleted = postDao.deleteOnePost(id);
 		if (integerOneIfDeleted == 1) {
 			postVo = postDao.selectOnePostById(id);
-			responseVo.setCode(HttpStatus.OK);
+			responseVo.setCode(HttpStatus.OK.value());
 			responseVo.setMessage("Success");
 			responseVo.setData(postVo);
 		} else {
-			responseVo.setCode(HttpStatus.INTERNAL_SERVER_ERROR);
+			responseVo.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 			responseVo.setMessage("Error");
 			responseVo.setData(null);
 		}
@@ -242,7 +239,7 @@ public class PostService {
 			userVo = userDao.selectOneUserById(followeeId);
 			if (followeeId == userId) {
 				userVo.setIsFollow(null);
- 			} else {
+			} else {
 				List<FollowVo> allFollowersByFolloweeIdList = followDao.selectAllFollowersByFolloweeId(followeeId);
 				FeedVo[] followVoArray = new FeedVo[allFollowersByFolloweeIdList.size()];
 				for (int j = 0; j < followVoArray.length; j++) {
@@ -256,7 +253,7 @@ public class PostService {
 						}
 					} catch (Exception e) {
 						logger.info("ERROR: NULL POINTER");
-					}		
+					}
 				}
 			}
 			long postId = allFeedList.get(i).getPostId();
@@ -278,7 +275,7 @@ public class PostService {
 				logger.info("Error: deleted post returned null");
 			}
 		}
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(allFeedListWithUser);
 		return responseVo;
@@ -298,7 +295,7 @@ public class PostService {
 		postVoWithUser.setTitle(title);
 		postVoWithUser.setContent(content);
 		postVoWithUser.setUser(userVo);
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(postVoWithUser);
 		return responseVo;

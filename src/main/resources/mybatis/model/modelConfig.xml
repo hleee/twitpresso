@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- Alias setter -->
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.codepresso.twitpresso.domain.UserVo"
+			alias="userVo" />
+		<typeAlias type="com.codepresso.twitpresso.domain.TokenVo"
+			alias="tokenVo" />
+		<typeAlias type="com.codepresso.twitpresso.domain.PostVo"
+			alias="postVo" />
+		<typeAlias type="com.codepresso.twitpresso.domain.FollowVo"
+			alias="followVo" />
+		<typeAlias type="com.codepresso.twitpresso.domain.FeedVo"
+			alias="feedVo" />
+	</typeAliases>
+</configuration>

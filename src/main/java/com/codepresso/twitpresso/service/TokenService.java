@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.myapp.domain.ResponseVo;
-import com.mycompany.myapp.domain.TokenVo;
-import com.mycompany.myapp.domain.UserVo;
-import com.mycompany.myapp.repository.TokenDao;
-import com.mycompany.myapp.repository.UserDao;
-import com.mycompany.myapp.util.TokenMaker;
+import com.codepresso.twitpresso.domain.ResponseVo;
+import com.codepresso.twitpresso.domain.TokenVo;
+import com.codepresso.twitpresso.domain.UserVo;
+import com.codepresso.twitpresso.repository.TokenDao;
+import com.codepresso.twitpresso.repository.UserDao;
+import com.codepresso.twitpresso.util.TokenMaker;
 
 @Service
 public class TokenService {
@@ -42,7 +42,7 @@ public class TokenService {
 		tokenVo.setUserId(id);
 		tokenDao.insertOneToken(tokenVo);
 		tokenVo = tokenDao.selectOneTokenRowByToken(token);
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(tokenVo);
 		return responseVo;

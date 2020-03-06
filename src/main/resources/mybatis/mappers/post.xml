@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.post">
+	<resultMap id="postResult" type="postVo">
+		<result property="id" column="id" />
+		<result property="userId" column="user_id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="createdAt" column="created_at" />
+	</resultMap>
+
+	<!-- id로 글 조회 -->
+	<select id="selectOnePostById" resultMap="postResult"
+		parameterType="Long">
+    <![CDATA[
+      SELECT * FROM post
+      WHERE id=#{id}
+    ]]>
+	</select>
+
+	<!-- DB에 제목과 내용 저장 -->
+	<!-- useGeneratedKeys를 true로 지정하면, 방금 DB에 입력된 행의, keyProperty에 지정한 (여기선 
+		id) 값을 postVO에 담아줌 -->
+	<insert id="insertOnePost" parameterType="postVo"
+		useGeneratedKeys="true" keyProperty="id">
+    <![CDATA[
+      INSERT INTO post(user_id, title, content)
+      VALUES(#{userId}, #{title}, #{content})
+    ]]>
+	</insert>
+
+	<!-- 전체 글을 내림차순 (가장 최근 글부터) 조회 -->
+	<select id="selectAllPosts" resultMap="postResult">
+    <![CDATA[
+      SELECT * FROM post
+      ORDER BY id DESC
+    ]]>
+	</select>
+
+	<!-- 내 글 전체 내림차순 조회 (가장 최근 글부터) -->
+	<!-- user_id로 조회할 것이기 때문에 DB로 가는 자료형은 long -->
+	<select id="selectPostsByUserId" resultMap="postResult"
+		parameterType="Long">
+    <![CDATA[
+      SELECT * FROM post
+      WHERE user_id = #{userId}
+      ORDER BY id DESC
+    ]]>
+	</select>
+
+	<!-- 사용자 ID로 가장 최근 글 하나 조회 -->
+	<select id="selectOnePostByUserId" resultMap="postResult"
+		parameterType="Long">
+    <![CDATA[
+      SELECT * FROM post
+      WHERE user_id = #{userId}
+      ORDER BY id DESC
+      LIMIT 1
+    ]]>
+	</select>
+
+	<!-- user_id로 조회할 것이기 때문에 DB로 가는 자료형은 long -->
+	<delete id="deleteOnePost" parameterType="Long">
+    <![CDATA[
+      DELETE FROM post
+      WHERE id = #{id}
+    ]]>
+	</delete>
+
+	<!-- id로 글 수정 -->
+	<update id="updateOnePost" parameterType="postVo">
+    <![CDATA[
+      UPDATE post
+      SET title = #{title}, content = #{content}
+      WHERE id = #{id}
+    ]]>
+	</update>
+
+</mapper>
+	

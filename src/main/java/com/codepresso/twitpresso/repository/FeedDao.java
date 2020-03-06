@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.myapp.domain.FeedVo;
-import com.mycompany.myapp.domain.PostVo;
-import com.mycompany.myapp.domain.ResponseVo;
+import com.codepresso.twitpresso.domain.FeedVo;
+import com.codepresso.twitpresso.domain.PostVo;
+import com.codepresso.twitpresso.domain.ResponseVo;
 
 @Repository
 public class FeedDao {

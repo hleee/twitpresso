@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.myapp.domain.FeedVo;
-import com.mycompany.myapp.domain.PostVo;
-import com.mycompany.myapp.domain.ResponseVo;
+import com.codepresso.twitpresso.domain.FeedVo;
+import com.codepresso.twitpresso.domain.PostVo;
+import com.codepresso.twitpresso.domain.ResponseVo;
 
 @Repository
 public class PostDao {
@@ -64,9 +64,9 @@ public class PostDao {
 	public PostVo selectOnePostByUserId(long userId) throws DataAccessException {
 		return sqlSession.selectOne("mapper.post.selectOnePostByUserId", userId);
 	}
-	
+
 	// 글 수정
-	public int updateOnePost (PostVo postVo) throws DataAccessException {
+	public int updateOnePost(PostVo postVo) throws DataAccessException {
 		return sqlSession.update("mapper.post.updateOnePost", postVo);
 	}
 

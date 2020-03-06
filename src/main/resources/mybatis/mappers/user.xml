@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.user">
+	<resultMap id="userResult" type="userVo">
+		<result property="id" column="id" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<result property="createdAt" column="created_at" />
+	</resultMap>
+
+	<!-- ID로 단일 회원 조회 -->
+	<!-- parameterType은 DB쪽으로 전달되는 자료형; long 형태의 ID 번호가 전달되어 조회 -->
+	<select id="selectOneUserById" resultMap="userResult"
+		parameterType="Long">
+    <![CDATA[
+      SELECT * FROM user
+      WHERE id=#{id}
+    ]]>
+	</select>
+
+	<!-- 전체 회원 조회 -->
+	<select id="selectAllUsers" resultMap="userResult">
+    <![CDATA[
+      SELECT * FROM user
+    ]]>
+	</select>
+
+	<!-- username과 password를 전달하여 DB에 저장 -->
+	<!-- parameterType은 DB로 전달되는 매개변수의 자료형; modelConfig에서 alias를 userVO로 지정했으므로 
+		축약 가능 -->
+	<!-- 회원 가입 -->
+	<insert id="insertOneUser" parameterType="userVo">
+    <![CDATA[
+      INSERT INTO user(username, password)
+      VALUES(#{username}, #{password})
+    ]]>
+	</insert>
+
+	<!-- username과 password로 단일 회원 조회 -->
+	<!-- 로그인 -->
+	<select id="selectOneUserByUsernameAndPassword"
+		resultMap="userResult" parameterType="userVO">
+    <![CDATA[
+      SELECT * FROM user
+      WHERE username=#{username} AND password=#{password}
+    ]]>
+	</select>
+
+</mapper>

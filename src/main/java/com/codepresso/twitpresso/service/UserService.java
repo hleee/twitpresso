@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.myapp.domain.ResponseVo;
-import com.mycompany.myapp.domain.UserVo;
-import com.mycompany.myapp.repository.UserDao;
+import com.codepresso.twitpresso.domain.ResponseVo;
+import com.codepresso.twitpresso.domain.UserVo;
+import com.codepresso.twitpresso.repository.UserDao;
 
 @Service
 public class UserService {
@@ -30,7 +30,7 @@ public class UserService {
 	public ResponseVo insertOneUser(UserVo userVo) throws Exception {
 		userDao.insertOneUser(userVo);
 		userVo = userDao.selectOneUserByUsernameAndPassword(userVo);
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(userVo);
 		return responseVo;
@@ -39,7 +39,7 @@ public class UserService {
 	// 전체 회원 조회
 	public ResponseVo selectAllUsers() throws Exception {
 		List<UserVo> allUsersList = userDao.selectAllUsers();
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(allUsersList);
 		return responseVo;
@@ -48,7 +48,7 @@ public class UserService {
 	// ID로 단일 회원 조회
 	public ResponseVo selectOneUserById(Long id) {
 		userVo = userDao.selectOneUserById(id);
-		responseVo.setCode(HttpStatus.OK);
+		responseVo.setCode(HttpStatus.OK.value());
 		responseVo.setMessage("Success");
 		responseVo.setData(userVo);
 		return responseVo;

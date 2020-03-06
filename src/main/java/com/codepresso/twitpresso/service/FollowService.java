@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.myapp.domain.FollowVo;
-import com.mycompany.myapp.domain.ResponseVo;
-import com.mycompany.myapp.domain.TokenVo;
-import com.mycompany.myapp.domain.UserVo;
-import com.mycompany.myapp.repository.FollowDao;
-import com.mycompany.myapp.repository.TokenDao;
-import com.mycompany.myapp.repository.UserDao;
+import com.codepresso.twitpresso.domain.FollowVo;
+import com.codepresso.twitpresso.domain.ResponseVo;
+import com.codepresso.twitpresso.domain.TokenVo;
+import com.codepresso.twitpresso.domain.UserVo;
+import com.codepresso.twitpresso.repository.FollowDao;
+import com.codepresso.twitpresso.repository.TokenDao;
+import com.codepresso.twitpresso.repository.UserDao;
 
 @Service
 public class FollowService {
@@ -46,11 +46,11 @@ public class FollowService {
 		followVo.setFollowerId(followerId);
 		int IntegerOneIfInserted = followDao.insertOneFollow(followVo);
 		if (IntegerOneIfInserted == 1) {
-			responseVo.setCode(HttpStatus.OK);
+			responseVo.setCode(HttpStatus.OK.value());
 			responseVo.setMessage("OK");
 			responseVo.setData("Success");
 		} else {
-			responseVo.setCode(HttpStatus.INTERNAL_SERVER_ERROR);
+			responseVo.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 			responseVo.setMessage("Error");
 			responseVo.setData("Failure");
 		}
@@ -66,11 +66,11 @@ public class FollowService {
 		followVo.setFollowerId(followerId);
 		int IntegerOneIfDeleted = followDao.deleteOneFollow(followVo);
 		if (IntegerOneIfDeleted == 1) {
-			responseVo.setCode(HttpStatus.OK);
+			responseVo.setCode(HttpStatus.OK.value());
 			responseVo.setMessage("OK");
 			responseVo.setData("Success");
 		} else {
-			responseVo.setCode(HttpStatus.INTERNAL_SERVER_ERROR);
+			responseVo.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 			responseVo.setMessage("Error");
 			responseVo.setData("Failure");
 		}

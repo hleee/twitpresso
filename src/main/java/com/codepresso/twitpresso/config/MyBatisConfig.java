@@ -20,7 +20,6 @@ public class MyBatisConfig {
 		sqlSessionFactory.setDataSource(dataSource);
 		sqlSessionFactory.setMapperLocations(
 				new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mappers/*.xml"));
-		;
 		sqlSessionFactory.setConfigLocation(
 				new PathMatchingResourcePatternResolver().getResource("classpath:mybatis/model/modelConfig.xml"));
 		return sqlSessionFactory.getObject();
@@ -28,7 +27,6 @@ public class MyBatisConfig {
 
 	@Bean
 	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
-
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 }
