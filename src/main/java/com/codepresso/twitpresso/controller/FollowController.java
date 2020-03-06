@@ -1,4 +1,4 @@
-package com.mycompany.myapp.controller;
+package com.codepresso.twitpresso.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mycompany.myapp.domain.FollowVo;
-import com.mycompany.myapp.domain.ResponseVo;
-import com.mycompany.myapp.service.FollowService;
+import com.codepresso.twitpresso.domain.FollowVo;
+import com.codepresso.twitpresso.domain.ResponseVo;
+import com.codepresso.twitpresso.service.FollowService;
 
 @RestController
 @RequestMapping("/*")

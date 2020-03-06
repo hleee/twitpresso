@@ -1,4 +1,4 @@
-package com.mycompany.myapp.domain;
+package com.codepresso.twitpresso.domain;
 
 import org.springframework.stereotype.Component;
 

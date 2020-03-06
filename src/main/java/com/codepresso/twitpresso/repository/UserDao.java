@@ -1,4 +1,4 @@
-package com.mycompany.myapp.repository;
+package com.codepresso.twitpresso.repository;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.mycompany.myapp.service;
+package com.codepresso.twitpresso.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

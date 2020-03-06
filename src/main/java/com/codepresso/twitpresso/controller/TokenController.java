@@ -1,4 +1,4 @@
-package com.mycompany.myapp.controller;
+package com.codepresso.twitpresso.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mycompany.myapp.domain.ResponseVo;
-import com.mycompany.myapp.domain.TokenVo;
-import com.mycompany.myapp.domain.UserVo;
-import com.mycompany.myapp.service.TokenService;
+import com.codepresso.twitpresso.domain.ResponseVo;
+import com.codepresso.twitpresso.domain.TokenVo;
+import com.codepresso.twitpresso.domain.UserVo;
+import com.codepresso.twitpresso.service.TokenService;
 
 @RestController
 @RequestMapping("/*")

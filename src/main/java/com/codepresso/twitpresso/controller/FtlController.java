@@ -1,4 +1,4 @@
-package com.mycompany.myapp.controller;
+package com.codepresso.twitpresso.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +29,8 @@ public class FtlController {
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView index(@CookieValue(value = "accesstoken", required = false) String token) { // 토큰이 있을 필요는 없으니 에러가 나지 않게
+	public ModelAndView index(@CookieValue(value = "accesstoken", required = false) String token) {
+
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
 		mav.addObject("user", token); // 토큰이 있는 상태를 'user'라고 부르기로 --> ftl에서 조건문에 <#if user??>
@@ -42,5 +43,5 @@ public class FtlController {
 		mav.setViewName("detail");
 		return mav;
 	}
-	
+
 }

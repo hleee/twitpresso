@@ -1,10 +1,10 @@
-package com.mycompany.myapp.domain;
+package com.codepresso.twitpresso.domain;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class TokenVo {
-	
+
 	private String token;
 	private long userId;
 	private String createdAt;

@@ -1,4 +1,4 @@
-package com.mycompany.myapp.util;
+package com.codepresso.twitpresso.util;
 
 import java.util.Random;
 

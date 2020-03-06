@@ -1,11 +1,11 @@
-package com.mycompany.myapp.domain;
+package com.codepresso.twitpresso.domain;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ResponseVo {
-	
+
 	private int code;
 	private String message;
 	private Object data;

@@ -1,4 +1,4 @@
-package com.mycompany.myapp.repository;
+package com.codepresso.twitpresso.repository;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.myapp.domain.TokenVo;
+import com.codepresso.twitpresso.domain.TokenVo;
 
 @Repository
 public class TokenDao {

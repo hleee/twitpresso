@@ -1,4 +1,4 @@
-package com.mycompany.myapp.service;
+package com.codepresso.twitpresso.service;
 
 import java.util.List;
 
