@@ -30,7 +30,6 @@ public class FtlController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(@CookieValue(value = "accesstoken", required = false) String token) {
-
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
 		mav.addObject("user", token); // 토큰이 있는 상태를 'user'라고 부르기로 --> ftl에서 조건문에 <#if user??>
