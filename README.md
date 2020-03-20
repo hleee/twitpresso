@@ -27,6 +27,7 @@
 |Java (JDK) | jdk 1.8.0_221 | https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html|
 |Spring Tool Suite | 3.9.11.RELEASE | https://marketplace.eclipse.org/content/spring-tools-3-standalone-edition|
 |MySQL | 8.0.19 | https://dev.mysql.com/downloads/installer/ |
+|Lombok | 1.18.10 | https://projectlombok.org/download |
 
 ## 실행 방법
 이클립스 통합 개발 환경을 열고 부트 대시보드에서 해당 파일에 우클릭을 한다. 옵션이 표시되면 최상단의 시작하기 단추를 눌러 실행한다.  
