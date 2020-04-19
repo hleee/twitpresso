@@ -6,6 +6,7 @@
 ## 프로젝트 소개
 ![GitHub version](https://img.shields.io/badge/version-dev-brightgreen)
 ![Release](https://img.shields.io/badge/release-1.0-blue)  
+
 트윗프레소(가명)는 코드프레소에서 실습용으로 개발한 소셜 네트워킹 플랫폼이다.   
 스프링 레거시 프로젝트로 개발을 마친 후, 이 저장소에서는 스프링 부트를 통해 동일한 기능을 구현해 보았다.
 
