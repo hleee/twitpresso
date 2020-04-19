@@ -4,6 +4,8 @@
 
 
 ## 프로젝트 소개
+![GitHub version](https://img.shields.io/badge/version-dev-brightgreen)
+![Release](https://img.shields.io/badge/release-1.0-blue)  
 트윗프레소(가명)는 코드프레소에서 실습용으로 개발한 소셜 네트워킹 플랫폼이다.   
 스프링 레거시 프로젝트로 개발을 마친 후, 이 저장소에서는 스프링 부트를 통해 동일한 기능을 구현해 보았다.
 
@@ -21,13 +23,13 @@
 
 ## 사전 준비 사항
 이 서비스를 가동하기 위해서는 아래와 같은 프로그램을 우선 설치하여야 한다.  
-| 프로그램 | 버전 정보 | 링크 |
-|-----|-----|----- |
-| Eclipse IDE | 2019-09 | https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-java-developers |
-|Java (JDK) | jdk 1.8.0_221 | https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html|
-|Spring Tool Suite | 3.9.11.RELEASE | https://marketplace.eclipse.org/content/spring-tools-3-standalone-edition|
-|MySQL | 8.0.19 | https://dev.mysql.com/downloads/installer/ |
-|Lombok | 1.18.10 | https://projectlombok.org/download |
+| 프로그램 | 버전 정보 | 
+|---------|---------|
+| Eclipse IDE | [![Eclipse version](https://img.shields.io/badge/version-2019--09-blue)](https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-java-developers) |
+| Java (JDK) | [![JDK version](https://img.shields.io/badge/version-1.8.0__221-blue)](https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html) |
+| Spring Tool Suite | [![STS version](https://img.shields.io/badge/version-3.9.11.RELEASE-blue)](https://marketplace.eclipse.org/content/spring-tools-3-standalone-edition) |
+| MySQL | [![MySQL version](https://img.shields.io/badge/version-8.0.19-blue)](https://dev.mysql.com/downloads/installer/) |
+| Lombok | [![Lombok version](https://img.shields.io/badge/version-1.18.10-blue)](https://projectlombok.org/download) |
 
 ## 실행 방법
 이클립스 통합 개발 환경을 열고 부트 대시보드에서 해당 파일에 우클릭을 한다. 옵션이 표시되면 최상단의 시작하기 단추를 눌러 실행한다.  
@@ -35,8 +37,7 @@
 ![image](https://user-images.githubusercontent.com/56017715/76007411-5b7b0500-5f51-11ea-96ad-23fccc2c6bcb.png)
 
 ## 개발자 블로그
-자세한 정보나 다른 프로젝트에 대해선 개발자의 블로그를 참고한다.   
-https://medium.com/@hleee
+자세한 정보나 다른 프로젝트에 대해선 개발자의 [블로그](https://medium.com/@hleee)를 참고한다.
 
 ## 저작권 및 라이선스
 :coffee: [CODEPRESSO &copy; 2020](https://github.com/code-presso)
